@@ -72,6 +72,10 @@ dependencies {
 
 }
 
+nativeBuild {
+    buildArgs = ["--trace-class-initialization=org.apache.commons.logging.LogFactoryService,org.apache.commons.logging.LogFactory"]
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
