@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 // 复习：返回 JSON 字符串，不经过视图解析器
 @RestController
 public class JDBCController {
+
+	@GetMapping("/userList")
+	public List<Map<String,Object>> userList(){
+	    // 查询 user 表的所有信息
+	    return new ArrayList<>();
+	}
+
 
     //// 已经配置好了，直接拿过来用
     //@Autowired
