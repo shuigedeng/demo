@@ -102,3 +102,35 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+
+bootBuildImage {
+    imageName = "registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-demo:2023.1.1"
+    pullPolicy = "IF_NOT_PRESENT"
+    cleanCache = true
+    verboseLogging = true
+    publish = true
+
+    docker {
+        //使用docker
+        //host = "tcp://127.0.0.1:2376"
+        //tlsVerify = true
+        //certPath = "/home/users/.minikube/certs"
+
+        //使用podman @since 2.7.0
+        //host = "unix:///run/user/1000/podman/podman.sock"
+        //bindHostToBuilder = true
+
+        builderRegistry {
+            username = findProperty("TAOTAO_CLOUD_REGISTRY_USERNAME") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_USERNAME")
+            password = findProperty("TAOTAO_CLOUD_REGISTRY_PASSWORD") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_PASSWORD")
+            url = "registry.cn-hangzhou.aliyuncs.com"
+        }
+
+        publishRegistry {
+            username = findProperty("TAOTAO_CLOUD_REGISTRY_USERNAME") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_USERNAME")
+            password = findProperty("TAOTAO_CLOUD_REGISTRY_PASSWORD") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_PASSWORD")
+            url = "registry.cn-hangzhou.aliyuncs.com"
+        }
+    }
+}
