@@ -1,0 +1,43 @@
+server:
+  port: 9527
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/pdf, application/msword, application/vnd.ms-excel, application/octet-stream
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: demo
+  datasource:
+    url: jdbc:mysql://172.16.60.248:3306/db_gbp_jc?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    password: Cqlyy@10086+1000
+    username: ltjt-jcpt
+  data:
+    redis:
+      host: 172.16.60.232
+      password: lyy-single+node
+      port: 6379
+      database: 3
+jwt:
+  filter:
+    matcher:
+      enable: false
+
+oa:
+  appid: 04817d45-0c75-6ec1-bd79-14bd64668b0d
+  mainURL: http://ltoa.cqtic.net
+  getTokenURL: /api/ec/dev/auth/applytoken
+  loginURL: /api/cqlt/checkPwd/validate
+  registURL: /api/ec/dev/auth/regist
+  subcompanyURL: /api/hrm/resful/getHrmsubcompanyWithPage
+  userInfoURL: /api/hrm/resful/getHrmUserInfoWithPage
+  jobInfoURL: /api/hrm/resful/getJobtitleInfoWithPage
+  departmentURL: /api/hrm/resful/getHrmdepartmentWithPage
+  sendCustomMessageURL: /api/ec/dev/message/sendCustomMessageSingle
+  message:
+    code: 1248
+    title: 临时用餐码已下发
+    context: 祝你用餐愉快！
+    linkMobileUrl: https://ltjt-sm-pfront.1000fun.com/temporary?id=%s&userId=%s

@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'org.graalvm.buildtools.native' version '0.9.18'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    maven {
+        allowInsecureProtocol = true
+
+        credentials {
+            username = System.getenv("TAOTAO_CLOUD_MAVEN_USERNAME")
+            password = System.getenv("TAOTAO_CLOUD_MAVEN_PASSWORD")
+        }
+        url 'https://repo.rdc.aliyun.com/repository/136936-release-reey0l/'
+    }
+
+//    maven {
+//        allowInsecureProtocol = true
+//
+//        credentials {
+//            username = System.getenv("TAOTAO_CLOUD_MAVEN_USERNAME")
+//            password = System.getenv("TAOTAO_CLOUD_MAVEN_PASSWORD")
+//        }
+//        url 'https://repo.rdc.aliyun.com/repository/136936-snapshot-hglDf2/'
+//    }
+
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("io.github.shuigedeng:taotao-cloud-dependencies:2023.01")
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+//    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    implementation 'io.github.shuigedeng:taotao-cloud-starter-common:2023.01'
+    implementation 'io.micrometer:micrometer-core:1.10.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
