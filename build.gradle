@@ -47,8 +47,8 @@ dependencies {
     implementation 'io.micrometer:micrometer-core:1.10.2'
 
     implementation "io.github.shuigedeng:taotao-cloud-starter-core"
-    //implementation "io.github.shuigedeng:taotao-cloud-starter-logger"
-    //implementation "io.github.shuigedeng:taotao-cloud-starter-dingtalk"
+    implementation "io.github.shuigedeng:taotao-cloud-starter-logger"
+    implementation "io.github.shuigedeng:taotao-cloud-starter-dingtalk"
     //implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-micrometer"
     //implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-skywalking"
 //
