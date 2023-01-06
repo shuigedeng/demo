@@ -1,4 +1,4 @@
-FROM oraclelinux:7-slim
+FROM ubuntu:bionic-20221215
 
 MAINTAINER shuigedeng
 
