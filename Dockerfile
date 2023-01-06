@@ -3,7 +3,7 @@ FROM oraclelinux:7-slim
 MAINTAINER shuigedeng
 
 # Add Spring Boot Native app spring-boot-graal to Container
-COPY --from=0 "build/native/nativeCompile/demo" spring-native-demo
+COPY --from=0 "/home/runner/work/demo/demo/build/native/nativeCompile/demo" spring-native-demo
 
 ENV PORT=9813
 

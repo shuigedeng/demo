@@ -48,6 +48,7 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           buildoptions: "--compress --force-rm"
           tags: "${{env.TAOTAO_CLOUD_VERSION}}"
+          #dockerfile: MyDockerFileName
 
     #name: demo graalvm on ${{ matrix.os }}
     #runs-on: ${{ matrix.os }}
