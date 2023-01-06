@@ -121,12 +121,6 @@ bootBuildImage {
         //host = "unix:///run/user/1000/podman/podman.sock"
         //bindHostToBuilder = true
 
-        builderRegistry {
-            username = findProperty("TAOTAO_CLOUD_REGISTRY_USERNAME") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_USERNAME")
-            password = findProperty("TAOTAO_CLOUD_REGISTRY_PASSWORD") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_PASSWORD")
-            url = "registry.cn-hangzhou.aliyuncs.com"
-        }
-
         publishRegistry {
             username = findProperty("TAOTAO_CLOUD_REGISTRY_USERNAME") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_USERNAME")
             password = findProperty("TAOTAO_CLOUD_REGISTRY_PASSWORD") ?: System.getenv("TAOTAO_CLOUD_REGISTRY_PASSWORD")

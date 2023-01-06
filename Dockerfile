@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20221215
+FROM ubuntu:22.04
 
 MAINTAINER shuigedeng
 
