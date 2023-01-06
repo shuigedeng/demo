@@ -38,29 +38,29 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'mysql:mysql-connector-java'
+//    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'io.micrometer:micrometer-core:1.10.2'
     implementation 'org.apache.httpcomponents:httpclient:4.5.14'
 
-    implementation "io.github.shuigedeng:taotao-cloud-starter-common"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-common"
 //    implementation "io.github.shuigedeng:taotao-cloud-starter-core"
 //    implementation "io.github.shuigedeng:taotao-cloud-starter-logger"
-    implementation "io.github.shuigedeng:taotao-cloud-starter-dingtalk"
-    implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-micrometer"
-    implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-skywalking"
-
-    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-alibaba"
-    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-tencent"
-    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-zookeeper"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-dingtalk"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-micrometer"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-tracing-skywalking"
 //
-    implementation "de.codecentric:spring-boot-admin-starter-server"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-alibaba"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-tencent"
+//    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-zookeeper"
+////
+//    implementation "de.codecentric:spring-boot-admin-starter-server"
 //
-    implementation "org.springframework.boot:spring-boot-starter-security"
+//    implementation "org.springframework.boot:spring-boot-starter-security"
     //implementation "org.springframework.boot:spring-boot-starter-mail"
 //
     implementation("org.springframework.boot:spring-boot-starter-web") {
@@ -73,30 +73,31 @@ dependencies {
 }
 
 
-nativeBuild {
-//    buildArgs = ["--initialize-at-run-time=org.apache.commons.logging.LogFactoryService,org.apache.commons.logging.LogFactory"]
-    buildArgs = ["--no-fallback",
-                 "--initialize-at-build-time=org.springframework.util.unit.DataSize",
-                 "--initialize-at-build-time=org.slf4j.MDC",
-                 "--initialize-at-build-time=ch.qos.logback.classic.Level",
-                 "--initialize-at-build-time=ch.qos.logback.classic.Logger",
-                 "--initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter",
-                 "--initialize-at-build-time=ch.qos.logback.core.status.StatusBase",
-                 "--initialize-at-build-time=ch.qos.logback.core.status.InfoStatus",
-                 "--initialize-at-build-time=ch.qos.logback.core.spi.AppenderAttachableImpl",
-                 "--initialize-at-build-time=org.slf4j.LoggerFactory",
-                 "--initialize-at-build-time=ch.qos.logback.core.util.Loader",
-                 "--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder",
-                 "--initialize-at-build-time=ch.qos.logback.classic.spi.ThrowableProxy",
-                 "--initialize-at-build-time=ch.qos.logback.core.CoreConstants",
-                 "--initialize-at-build-time=java.net.Inet6Address",
-                 "--report-unsupported-elements-at-runtime",
-                 "--allow-incomplete-classpath",
-                 "--trace-class-initialization=org.apache.commons.logging.LogFactory,org.apache.commons.logging.LogFactoryService",
-                 "-H:+ReportExceptionStackTraces",
-                 "--trace-object-instantiation=java.net.Inet6Address"
-            ]
-}
+//nativeBuild {
+////    buildArgs = ["--initialize-at-run-time=org.apache.commons.logging.LogFactoryService,org.apache.commons.logging.LogFactory"]
+//    buildArgs = ["--no-fallback",
+//                 "--initialize-at-build-time=org.springframework.util.unit.DataSize",
+//                 "--initialize-at-build-time=org.slf4j.MDC",
+//                 "--initialize-at-build-time=ch.qos.logback.classic.Level",
+//                 "--initialize-at-build-time=ch.qos.logback.classic.Logger",
+//                 "--initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter",
+//                 "--initialize-at-build-time=ch.qos.logback.core.status.StatusBase",
+//                 "--initialize-at-build-time=ch.qos.logback.core.status.InfoStatus",
+//                 "--initialize-at-build-time=ch.qos.logback.core.spi.AppenderAttachableImpl",
+//                 "--initialize-at-build-time=org.slf4j.LoggerFactory",
+//                 "--initialize-at-build-time=ch.qos.logback.core.util.Loader",
+//                 "--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder",
+//                 "--initialize-at-build-time=ch.qos.logback.classic.spi.ThrowableProxy",
+//                 "--initialize-at-build-time=ch.qos.logback.core.CoreConstants",
+//                 "--initialize-at-build-time=java.net.Inet6Address",
+//                 "--report-unsupported-elements-at-runtime",
+//                 "--allow-incomplete-classpath",
+//                 "--trace-class-initialization=org.apache.commons.logging.LogFactory,org.apache.commons.logging.LogFactoryService",
+//                 "-H:+ReportExceptionStackTraces",
+//                 "--trace-object-instantiation=java.net.Inet6Address"
+//    ]
+//}
+
 
 tasks.named('test') {
     useJUnitPlatform()

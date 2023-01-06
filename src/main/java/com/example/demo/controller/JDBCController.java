@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class JDBCController {
 
 	@GetMapping("/userList")
-	public List<Map<String,Object>> userList(){
+	public List<Integer> userList(){
 	    // 查询 user 表的所有信息
-	    return new ArrayList<>();
+	    return Arrays.asList(1, 2);
 	}
 
 
