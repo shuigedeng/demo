@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		try {
-			SpringApplication.run(DemoApplication.class, args);
-		}catch (Throwable e){
-			e.printStackTrace();
-		}
-
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
