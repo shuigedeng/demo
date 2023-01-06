@@ -59,10 +59,10 @@ dependencies {
 //    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-tencent"
 //    implementation "io.github.shuigedeng:taotao-cloud-starter-facility-zookeeper"
 
-    implementation "de.codecentric:spring-boot-admin-starter-server"
-
-    implementation "org.springframework.boot:spring-boot-starter-security"
-    implementation "org.springframework.boot:spring-boot-starter-mail"
+//    implementation "de.codecentric:spring-boot-admin-starter-server"
+//
+//    implementation "org.springframework.boot:spring-boot-starter-security"
+//    implementation "org.springframework.boot:spring-boot-starter-mail"
 
     implementation("org.springframework.boot:spring-boot-starter-web") {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
